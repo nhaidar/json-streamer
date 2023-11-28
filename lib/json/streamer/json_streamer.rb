@@ -64,7 +64,7 @@ module Json
       private
 
       def process_io
-        @file_io.each(@chunk_size) { |chunk| parser << chunk } if @file_io
+        @file_io.each(*[@chunk_size].compact) { |chunk| parser << chunk } if @file_io
       end
 
       def make_event_generator(generator)
